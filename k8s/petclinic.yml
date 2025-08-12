@@ -28,9 +28,11 @@ spec:
       labels:
         app: petclinic
     spec:
+      imagePullSecrets:
+        - name: acr-secret
       containers:
         - name: workload
-          image: dsyer/petclinic
+          image: aratiegistry.azurecr.io/petclinic:latest
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: postgres
@@ -52,13 +54,3 @@ spec:
             httpGet:
               path: /readyz
               port: http
-          volumeMounts:
-            - mountPath: /bindings/secret
-              name: binding
-              readOnly: true
-      volumes:
-        - name: binding
-          projected:
-            sources:
-              - secret:
-                  name: demo-db
