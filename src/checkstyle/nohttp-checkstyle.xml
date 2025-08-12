@@ -1,11 +1,16 @@
 <?xml version="1.0"?>
 <!DOCTYPE module PUBLIC
-		"-//Puppy Crawl//DTD Check Configuration 1.2//EN"
-		"https://checkstyle.org/dtds/configuration_1_2.dtd">
-<!--<module name="com.puppycrawl.tools.checkstyle.Checker">
-	<module name="io.spring.nohttp.checkstyle.check.NoHttpCheck"/>
-	<module name="SuppressionFilter">
-		<property name="file" value="${config_loc}/nohttp-checkstyle-suppressions.xml"/>
-		<property name="allowListRegexp" value="http://172\190\115\144:9000.*"/>
-	</module>
-</module> -->
+    "-//Puppy Crawl//DTD Check Configuration 1.2//EN"
+    "https://checkstyle.org/dtds/configuration_1_2.dtd">
+
+<module name="com.puppycrawl.tools.checkstyle.Checker">
+
+    <module name="io.spring.nohttp.checkstyle.check.NoHttpCheck">
+        <property name="allowlistRegexp" value="http://172\.190\.115\.144:9000.*"/>
+    </module>
+
+    <module name="SuppressionFilter">
+        <property name="file" value="${config_loc}/nohttp-checkstyle-suppressions.xml"/>
+    </module>
+
+</module>
