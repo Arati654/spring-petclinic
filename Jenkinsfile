@@ -84,7 +84,7 @@ pipeline {
             steps {
                 echo 'Building Docker image...'
                 sh '''
-                    docker build -t ${ImageName}:${BUILD_TAG} .
+                    docker build -t ${ImageName}:${BUILD_TAG} -f .devcontainer/Dockerfile .
                     docker tag ${ImageName}:${BUILD_TAG} aratiegistry.azurecr.io/${ImageName}:${BUILD_TAG}
                 '''
             }
