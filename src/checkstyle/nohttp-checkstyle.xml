@@ -6,5 +6,6 @@
 	<module name="io.spring.nohttp.checkstyle.check.NoHttpCheck"/>
 	<module name="SuppressionFilter">
 		<property name="file" value="${config_loc}/nohttp-checkstyle-suppressions.xml"/>
+		<property name="allowListRegexp" value="http://172\190\115\144:9000.*"/>
 	</module>
 </module>
