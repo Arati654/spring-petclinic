@@ -28,8 +28,6 @@ spec:
       labels:
         app: petclinic
     spec:
-      imagePullSecrets:
-        - name: acr-secret
       containers:
         - name: workload
           image: aratiegistry.azurecr.io/petclinic:latest
